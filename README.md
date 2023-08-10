@@ -1,1 +1,3 @@
-# my_personal_project
+![Alt text](img/tldraw.png)
+
+![Alt text](img/schema.png)
