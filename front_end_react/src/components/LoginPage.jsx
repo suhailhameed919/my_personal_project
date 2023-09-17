@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom"; 
 import { api } from "../utilities";
 import { useNavigate } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 
 export default function LoginPage({ onLogin }) {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("");     
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
@@ -26,10 +26,7 @@ export default function LoginPage({ onLogin }) {
 
 
   
-        // Set the token in axios headers for future requests
         api.defaults.headers.common["Authorization"] = `Token ${token}`;
-        // console.log("if statement")
-        // onLogin(username);
         navigate("/home")
 
 
@@ -44,7 +41,7 @@ export default function LoginPage({ onLogin }) {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Invest4Tomorrow</h1>
       <h2>Login</h2>
       <form onSubmit={(e) => handleLogin(e)}>
@@ -88,16 +85,15 @@ async function login(email, password) {
     if (response.status === 200) {
       const token = response.data.token;
 
-      // Set the token in axios headers for future requests
       axios.defaults.headers.common["Authorization"] = `Token ${token}`;
 
-      return true; // Return success flag
+      return true; 
     } else {
-      return false; // Return failure flag
+      return false; 
     }
   } catch (error) {
     console.error("Error logging in:", error);
-    return false; // Return failure flag
+    return false; 
   }
 }
 

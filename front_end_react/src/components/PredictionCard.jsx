@@ -1,11 +1,18 @@
 import React from "react";
 import { api } from "../utilities";
 
+const addCommas = (value) => {
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+
+
+
 export default function PredictionCard({ prediction }) {
-  // const { name, annual_income, monthlyExpenses, incomeIncrease, years, futureNetWorth } = prediction;
   console.log("Prediction data:", prediction);
   const { prediction_name, state, filing_status, annual_income, avg_monthly_expenses, current_net_worth, future_net_worth, user_id } = prediction;
 
+  const formattedFutureNetWorth = addCommas(future_net_worth);
 
   const handleDelete = async () => {
     try {
@@ -38,16 +45,13 @@ export default function PredictionCard({ prediction }) {
 
   return (
     <div className="prediction-card">
-      <h3>Prediction: {prediction_name}</h3>
-      <p>state: {state}</p>
+      <h3>{prediction_name}</h3>
       <p>Filing Status: {filing_status}</p> 
       <p>Annual Income: {annual_income}</p> 
       <p>Average Monthly Expenses: {avg_monthly_expenses}</p>
       <p>Current Net Worth: {current_net_worth}</p>
-      <p>This is what 20 years of compounding at 8% looks like</p>
-      <p>This doesn't even include your contribitions.</p>
-
-      <p>Future Net Worth: {future_net_worth}</p>
+      <p>This is what 5 years of compounding at 8% looks like:</p>
+      <p>Future Net Worth: {formattedFutureNetWorth}</p>
       <button onClick={handleDelete}>Delete</button>
     </div>
   );

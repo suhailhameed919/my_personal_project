@@ -11,7 +11,6 @@ from .serializers import Predictions_serializer
 import requests
 
 
-#class is responsible for handling the endpoints related to listing and creating predictions
 class PredictionsListView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
@@ -47,13 +46,7 @@ class PredictionDetailView(APIView):
         serializer = Predictions_serializer(prediction)
         return Response(serializer.data, status=HTTP_200_OK)
 
-    # def put(self, request, prediction_id):
-    #     prediction = get_object_or_404(Predictions, id=prediction_id, user_id=request.user)
-    #     for field in ['state', 'filing_status', 'annual_income', 'avg_monthly_expenses',
-    #                   'current_net_worth', 'percent_savings_increase', 'prediction_name']:
-    #         setattr(prediction, field, request.data.get(field, getattr(prediction, field)))
-    #     prediction.save()
-    #     return Response(Predictions_serializer(prediction).data, status=HTTP_200_OK)
+
 
     def delete(self, request, prediction_id):
         prediction = get_object_or_404(Predictions, id=prediction_id, user_id=request.user)

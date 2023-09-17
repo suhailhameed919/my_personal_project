@@ -1,70 +1,3 @@
-// import React from "react";
-// import { Link, useNavigate, useLocation } from "react-router-dom";
-// import { api } from "../utilities";
-
-// export default function Navbar() {
-//   const navigate = useNavigate();
-//   const location = useLocation();
-
-//   const logOut = async () => {
-//     try {
-//       const token = localStorage.getItem("token");
-//       if (!token) {
-//         console.error("No token found");
-//         return;
-//       }
-  
-//       const response = await api.post("users/logout/", null, {
-//         headers: {
-//           Authorization: `Token ${token}`,
-//         },
-//       });
-  
-//       if (response.status === 204) {
-//         localStorage.removeItem("token");
-//         delete api.defaults.headers.common["Authorization"];
-        
-//         navigate("/login");
-//       }
-//     } catch (error) {
-//       console.error("Error logging out:", error);
-//     }
-//   };
-
-//   const isLoginPage = location.pathname === "/login";
-//   const isSignupPage = location.pathname === "/signup";
-
-
-
-//   return (
-//     <>
-//         {!isLoginPage && !isSignupPage && (
-//     <nav>
-//       <ul>
-//         <li>
-//           <Link to="/home">Home</Link>
-//         </li>
-//         <li>
-//           <Link to="/calculator">Calculator</Link>
-//         </li>
-//         <li>
-//           <Link to="/predictions">Predictions</Link>
-//         </li>
-//         <li>
-//           <button onClick={logOut}>
-//             Logout
-//           </button>
-//         </li>
-//       </ul>
-//     </nav>
-//         )}
-//     </>
-//   );
-// }
-
-
-
-
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { api } from "../utilities";
@@ -107,7 +40,10 @@ export default function CustomNavbar() {
 
   return (
     <>
-      {!isLoginPage && !isSignupPage && (
+    <div>
+      
+      {!isLoginPage && !isSignupPage && (<nav>
+
         <Navbar bg="info" variant="light" expand="lg">
           <Container>
             <Navbar.Brand as={Link} to="/home">
@@ -132,7 +68,9 @@ export default function CustomNavbar() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      )}
+      </nav>
+      )} 
+    </div>
     </>
   );
 }

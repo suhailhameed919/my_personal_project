@@ -22,7 +22,7 @@ export default function CalculatorPage() {
   const growth_rate = 0.08; 
   const years = 20; 
   const net_income = annual_income * (1 - tax_rate);
-
+  const annual_savings = net_income - avg_monthly_expenses * 12;
 
   
 
@@ -30,7 +30,7 @@ export default function CalculatorPage() {
     e.preventDefault();
 
     try {
-      console.log(filing_status)
+      
       const future_net_worth = current_net_worth * Math.pow(1 + growth_rate, years); 
       const response = await api.post("predictions/createprediction/", { state, filing_status, annual_income, avg_monthly_expenses, current_net_worth, prediction_name, future_net_worth });
 
@@ -50,34 +50,28 @@ export default function CalculatorPage() {
 
 
   return (
-    <div>
+    <div className="net-worth-calculator">
       <h2>Net Worth Calculator</h2>
       <form onSubmit = {handleAddPrediction}>
           <p>
-          This is a very simple calculator giving you a rough estimate of where you stand financially, assuming you are a filing a w2. 
+          This is a very simple calculator. Only for rough estimate of federal taxes and rough estimate of compound growth.
           </p>
           
-        <div>
-          <label htmlFor="name">State:</label>
-          <input
-            type="text"
-            id="state"
-            value = {state}
-            onChange={(e) => setState(e.target.value)}
-          />
-        </div>
+      
 
-        <div>
-          <label htmlFor="name">Filing Status:</label>
-          <input
-            type="text"
+        <div className="form-field">
+          <label htmlFor="filing_status">Filing Status:</label>
+          <select
             id="filing_status"
-            value = {filing_status}
-            onChange={(e) => setfiling_status(e.target.value)}
-          />
+            value={filing_status}
+            onChange={(e) => setFilingStatus(e.target.value)}
+          >
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+          </select>
         </div>
 
-        <div>
+        <div className="form-field">
           <label htmlFor="name">Taxable household income:</label>
           <input
             type="text"
@@ -87,7 +81,7 @@ export default function CalculatorPage() {
           />
         </div>
 
-        <div>
+        <div className="form-field">
           <label htmlFor="name">Average Monthly expenses:</label>
           <input
             type="text"
@@ -97,7 +91,7 @@ export default function CalculatorPage() {
           />
         </div>
 
-        <div>
+        <div className="form-field">
           <label htmlFor="name">Current Net Worth:</label>
           <input
             type="text"
@@ -106,7 +100,7 @@ export default function CalculatorPage() {
             onChange={(e) => setcurrent_net_worth(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-field">
           <label htmlFor="name">Prediction Name:</label>
           <input
             type="text"
@@ -116,7 +110,7 @@ export default function CalculatorPage() {
           />
           </div>
 
-        <button variety = "primary" type = "submit">
+        <button variety = "primary" type = "submit" className="submit-button">
           Save to Predictions Page
 
         </button>
