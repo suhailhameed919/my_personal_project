@@ -74,3 +74,5 @@ export default function CustomNavbar() {
     </>
   );
 }
+
+//navbar looks good
