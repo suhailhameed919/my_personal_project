@@ -67,3 +67,213 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0DCAF0; /* Change to a different color */
+  padding: 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Reduced margin for a more compact look */
+
+}
+
+
+
+.prediction-card {
+  border: 2px solid #ccc; /* Add a border with a light grey color */
+  background-color: lightgrey; /* Light grey background */
+  padding: 20px; /* Add padding for better spacing */
+  margin: 10px; /* Add margin to separate prediction cards */
+  width: 300px; /* Adjust width to your preference */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.prediction-card h3 {
+  font-size: 1.5rem; 
+  margin-bottom: 10px; 
+  font-weight: bold;
+}
+
+.prediction-card p {
+  margin: 5px 0; 
+  font-size: 14px;
+}
+
+.prediction-card button {
+  padding: 10px 20px; 
+  background-color: darkgrey; 
+  color: white; 
+  border: none; 
+  cursor: pointer; 
+}
+
+.prediction-card button:hover {
+  background-color: red; 
+}
+
+.net-worth-calculator {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 10px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: lightgrey;
+}
+
+.net-worth-calculator h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.net-worth-calculator p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+
+.welcome-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.welcome-container p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  
+}
+
+.login-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.login-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.login-container form div {
+  margin-bottom: 10px;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+.login-container p {
+  margin-top: 10px;
+}
+
+.login-container p a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.login-container p a:hover {
+  text-decoration: underline;
+}
+
+
+.signup-container {
+  max-width: 400px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signup-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.signup-container form div {
+  margin-bottom: 10px;
+}

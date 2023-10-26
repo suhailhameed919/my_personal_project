@@ -20,7 +20,6 @@ export default function PredictionsPage() {
           }
         }); 
         setData(response.data);
-        // setSavedPredictions(data);
       } catch (error) {
         console.error("Error getting the saved predictions:", error);
       }

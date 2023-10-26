@@ -3,7 +3,7 @@ import { api } from "../utilities";
 
 export default function HomePage() {
   const [cerealData, setCerealData] = useState([]);
-  const [inflationData, setInflationData] = useState([]);
+  const [inflationData, setInflationData] = useState([]); 
 
 
   useEffect(() => {
@@ -22,11 +22,18 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div>
+    <div className="welcome-container">
       <h2>Welcome!</h2>
       <p>Can we agree that your $20 bill is not nearly worth as much as it was a few years ago?</p>
 
-      <p>As of the previous month on your calendar, inflation is at {inflationData.monthly_rate_pct}% for the month, and {inflationData.yearly_rate_pct}% for the year</p>  
+
+      {Object.keys(inflationData).length ? (
+        <p>
+          As of the previous month on your calendar, inflation is at {inflationData.monthly_rate_pct}% for the month, and {inflationData.yearly_rate_pct}% for the year
+        </p>
+      ) : (
+        <p>Loading inflation data...</p>
+      )}
 
       <p>We can't control the world around us, but we can improve our own finances.</p>
       <p>The goal with this app is to help you visualize your future finances.</p>
